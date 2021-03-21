@@ -17,6 +17,7 @@ In this challenge we will be provisioning our first Kubernetes cluster using the
 	- The cluster will use basic networking and kubenet.  
 	- The cluster will use a managed identity
 	- The cluster will use Availability Zones for improved worker node reliability.
+	- **HINT:** use the AKS/ACR integration option
 - Use kubectl to prove that the cluster is a multi-node cluster and is working.
 - Use kubectl to examine which availability zone each node is in.  
 

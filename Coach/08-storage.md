@@ -6,7 +6,8 @@
 
 - Azure disks are zone-specific resources and must be in the same zone as the node that the pod is running on. See [here](https://docs.microsoft.com/en-us/azure/aks/availability-zones#azure-disks-limitations).
 - Generally, PVCs are bound immediately on creation. That means it is possible for the two PVCs for the mongodb pod to be bound to Azure Disks in different zones.
-- To force the two PVs to be deployed to the same zone, a new storage class is created with "volumeBindingMode: WaitForFirstConsumer". This forces kubernetes to wait until a workload is deployed before provisioning the disks. See [here](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode).
+- Today, the default storage class uses `volumeBindingMode: WaitForFirstConsumer`.  This forces kubernetes to wait until a workload is deployed before provisioning the disks. See [here](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode).
+  - In earlier days, this was not the case; the default was `volumeBindingMode: Immediate`.  Thus, in earlier days, to force the two PVs to be deployed to the same zone, a new custom storage class needed to be created with `volumeBindingMode: WaitForFirstConsumer`.  **Using a custom storage class is no longer necessary for this hack**
 - Kubernetes is smart enough to not schedule pods with PVs in a specific zone on a node in a different zone, see [here](https://kubernetes.io/docs/setup/best-practices/multiple-zones/#storage-access-for-zones).
 
 

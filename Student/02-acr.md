@@ -21,3 +21,7 @@ In this challenge we will be creating and setting up a new, private, Azure Conta
 1. You have provisioned a new Azure Container Registry
 1. You have deployed your container images to the registry.
 2. You can log into the registry and see all images.
+3. Extra Credit: (optional) Use [ACR Tasks](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli) to build your container images in the cloud
+
+## Reading
+https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli

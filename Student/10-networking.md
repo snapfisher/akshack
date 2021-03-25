@@ -15,6 +15,7 @@ In this challenge you will be installing an Ingress Controller and learning how 
 - Create a DNS Zone for the AKS cluster.
 - Deploy the content-web service and create an Ingress resource for it. 
 	- The reference template can be found in the Challenge 10 Resources folder: `template-web-ingress-deploy.yaml`
+	- **HINT**: First get the ingress working without the host name.  Once you've verified it's working, add the host (DNS) name 
 	- Change the ACR & AKS DNS Name to match yours.
 - Verify the DNS records are created, and if so, access the application using the DNS name, e.g: 
     - `http://fabmed.[YOUR_AKS_DNS_ID].[REGION].aksapp.io`

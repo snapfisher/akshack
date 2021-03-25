@@ -14,14 +14,17 @@ In this challenge we'll be setting up all the tools we will need to complete our
 
 - Install the recommended toolset:
     - Windows Subsystem for Linux
-    - Azure CLI 
-    - Visual Studio Code
+    - Azure CLI
+    - git 
+    - Visual Studio Code, plus recommended extenstions:
       - Docker Extension
       - Kubernetes Extension
       - Remote SSH Extension
-    - Optional: Lens https://docs.k8slens.dev/v4.1.4/
+    - Optional but recommended: Lens Kubernetes GUI https://docs.k8slens.dev/v4.1.4/ 
 - **NOTE:** You can start the next challenge even if this one is still running by using the Azure Cloud Shell.
 - **Tip:** You can complete almost all of the challenges with the Azure Cloud Shell!  But be a good cloud architect and make sure you have experience installing the tools locally.
+
+You need to clone this repo locally (regardless of where you are working):  `git clone https://github.com/larryclaman/akshack`
 
 ## Success Criteria
 

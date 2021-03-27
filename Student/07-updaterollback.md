@@ -20,16 +20,19 @@ In this challenge you'll be deploying a v2 of the FabMedical application to your
 	- You should verify that the MongoDB contains the FabMedical data after content-init job has completed.  Hint:
     	- Connect to the mongodb pod
     	- Use the mongodb command `show dbs`
-	- Logs for content-init will provide the detailed logs showing whether it was able to successfully connect and add the contents to the MongoDB. You can use kubectl to check the logs.
-- Perform a rolling update of content-web on your cluster to the new version of content-web
-    - **NOTE:** The new version of content-api will need to know how to reach the MongoDB server. You will need to pass it an environment variable named: **MONGODB_CONNECTION** set to its URL:
-    	- `mongodb://mongodb:27017/contentdb`
-	- Two options for updating the image used by the deployment:  1) `kubectl set image`, or 2) Edit the deployment
-	- With kubectl and its watch feature you should be able to see new pods with the new version come online and the old pods terminate.
+	- Logs for content-init will provide the detailed logs showing whether it was able to successfully connect and add the contents to the MongoDB. You can use kubectl (or the Azure Portal) to check the logs.
+
+
+### Rolling update
+- Next, you will need to perform a rolling update of content-web on your cluster to the new version of content-web.  You will need to edit your deployment to incorporate the following:
+  1. You need to update the container image referenced in your deployment as specified above.
+  2. The new version of content-api will need to know how to reach the MongoDB server. You will need to pass it an environment variable named: **MONGODB_CONNECTION**, and this needs to be set the URL:  `mongodb://mongodb:27017/contentdb`
+- With kubectl and its watch feature you should be able to see new pods with the new version come online and the old pods terminate.
 	- At the same time, hit the front page to see when you’re on the new version by refreshing constantly until you see the conference dates updated to 2019. 
 - Now we are going to roll back this update.
 	- Again, this is done from the command-line using a (different) kubectl command.
 	- Confirm that we are back to the original version of the app by checking that the conference dates are back to 2017.
+### Blue-Green Deployment
 - Perform the update again, this time using the blue/green deployment methodology.
 	- This time make sure you update BOTH content-web and content-api.
 	- You will need a separate deployment file using different tags.

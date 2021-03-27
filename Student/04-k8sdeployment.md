@@ -18,14 +18,15 @@ In this challenge we need to get our application up and running in Kubernetes. W
 ### Deploy the **API app** from the command line using kubectl and YAML files:
 
 - **NOTE:** Sample YAML files to get you started can be found in the Student Resources folder.
-- Cofiguration details:
+- Configuration details:
   - Number of pods: 1
   - Service: Internal
   - Port and Target Port: 3001
   - CPU: 0.5
   - Memory: 128MB
+- Hint:  Make sure you correctly set [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits)
 - We have not exposed the API app to the external world. (Explanation:  see [this link](https://goglides.io/clusterip-nodeport-and-loadbalancer-service-types-in-kubernetes/98/) and the [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)) Therefore, to test it you need to:
-	- Figure out how to get a bash shell on the API app pod just deployed.  _[Hint 1: link to docs](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)_   _Hint 2: VS Code and Lens can make this point-n-click_
+	- Figure out how to get a bash shell on the API app pod just deployed.  _[Hint 1: link to docs](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)_   _Hint 2: VS Code and/or [Lens](https://k8slens.dev/) can make this point-n-click_
 	- From the terminal, curl the url of the `/speakers` end point.
 	- You should get a huge json document in response.
   

@@ -34,8 +34,8 @@ In this hack you will solve a common challenge for companies migrating to the cl
    - Delete the MongoDB you created earlier and observe what happens when you don't have persistent storage. Fix it!
 - Challenge 9: **[Helm](Student/09-helm.md)**
    - Install Helm tools, customize a sample Helm package to deploy FabMedical, publish the Helm package to Azure Container Registry and use the Helm package to redeploy FabMedical to AKS.
-- Challenge 10: **[Networking](Student/10-networking.md)**
-   - Explore different ways of routing traffic to FabMedical by configuring an Ingress Controller with the HTTP Application Routing feature in AKS.
+- Challenge 10: **[DNS & Ingress](Student/10-networking.md)**
+   - Explore integrating DNS with Kubernetes services, and explore different ways of routing traffic to FabMedical by configuring an Ingress Controller.
 - Challenge 11: **[Operations and Monitoring](Student/11-opsmonitoring.md)**
    - Explore the logs provided by Kubernetes using the Kubernetes CLI, configure Azure Monitor and build a dashboard that monitors your AKS cluster
    

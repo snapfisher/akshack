@@ -6,6 +6,9 @@
 
 The first step in our journey will be to take our application and package it as a container image using Docker.
 
+## Demo
+Your coach will demonstrate running the application natively without using containers.
+
 ## Description
 
 In this challenge we'll use a Dockerfiles to build container images of our app, and we'll test them locally.

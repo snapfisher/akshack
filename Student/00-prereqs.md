@@ -32,7 +32,7 @@ You will also need to install docker in the WSL2 subsystem: [Docker Installation
 You will then need to copy the code that you witll need into the Lunux subsystem.  There are two folders that you need: "Student/Resources/Chapter 0/content-api" and "Student/Resources/Chapter 0/content-web"
 
 ### Deploying and Access a Linux VM Build Server
-If you choose to use the second option, we have already created an image for your use, which also contains the code which will need to be containerized.
+If you choose to use the second option, we have already created a virtual machine template for your use, which also contains the code which will need to be containerized.
 
 If you choose to use a VM in Azure, deploy the build machine VM with Linux + Docker using the provided ARM Template and parameters file in the "Student/Resources/Chapter 0/build-machine" folder of this repo.  You can run the following script, after logging in with the Azure CLI:
 ```

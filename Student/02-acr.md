@@ -14,7 +14,7 @@ In this challenge we will be creating and setting up a new, private, Azure Conta
 - Ensure your ACR has proper permissions and credentials set up
 - Login to your ACR
 - Push your Docker container images to the ACR
-  - If you dont have the images locally, you can IMPORT them into ACR via a command like `az acr import -n MyRegistry --source docker.io/whatthehackmsft/content-api:v1 -t
+  - If you don't have the images locally, you can IMPORT them into ACR via a command like `az acr import -n MyRegistry --source docker.io/whatthehackmsft/content-api:v1 -t
         content-api:v1` and `az acr import -n MyRegistry --source docker.io/whatthehackmsft/content-web:v1 -t
         content-web:v1`
 - List all images in your ACR

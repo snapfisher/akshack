@@ -15,7 +15,7 @@ In this challenge we'll use a Dockerfiles to build container images of our app, 
 
 ### First a demo.
 
-The instructor will demo the application running on a Linux virtual machine, non-containerized
+The instructor will demo the application running on a Linux virtual machine, non-containerized.
 
 ### Building the Docker Image
 

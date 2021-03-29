@@ -1,6 +1,6 @@
 # Challenge 10: DNS & Ingress
 
-[< Previous Challenge](./09-helm.md) - **[Home](../README.md)** - [Next Challenge >](./11-opsmonitoring.md)
+[< Previous Challenge](./09-helm.md) - **[Home](../README.md)** - [Next Challenge >](./11-privateaks.md)
 
 ## Introduction
 

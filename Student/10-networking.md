@@ -37,13 +37,13 @@ Switching gears, we will now start working with ingress controllers, which allow
 Just like in part 1, you will now add a metadata annotation to the ingress controller to configure a dns name.
 
 1. Adding a dns label to the ingress controller via helm can be tricky.  It's documented at this link: https://docs.microsoft.com/en-us/azure/aks/ingress-static-ip
-   - Specifically, you will need to modify (upgrade) your ingress controller deployment as follows:
-```
+   - Specifically, you will need to modify (upgrade) your ingress controller deployment as follows:  _Note: replace the backslashes \ with a backtick ` if you're using powershell_
+```bash
 helm upgrade  nginx-ingress ingress-nginx/ingress-nginx \
     --namespace ingress-basic --reuse-values \
     --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="NEW-DNS-LABEL"
 ```
-2. Next, you should update the ingress yaml you created earlier by uncommenting the `Host:` line and adding in the DNS_LABEL you chose.
+2. Next, you should update the ingress yaml you created earlier by uncommenting the `Host:` line and adding in the [DNS_LABEL].[REGION].cloudapp.azure.com you chose.
 3. Verify that the DNS record has been created (nslookup or dig), and then access the application using the DNS name, e.g: 
     - `http://[new-dns-label].[REGION].cloudapp.azure.com`
 

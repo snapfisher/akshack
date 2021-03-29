@@ -43,7 +43,7 @@ helm upgrade  nginx-ingress ingress-nginx/ingress-nginx \
     --namespace ingress-basic --reuse-values \
     --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="NEW-DNS-LABEL"
 ```
-2. Next, you should update the ingress yaml you created earlier by uncommenting the `Host:` line and adding in the [DNS_LABEL].[REGION].cloudapp.azure.com you chose.
+2. Next, you should update the ingress yaml you created earlier by uncommenting the `Host:` line and adding in the [new-dns-label].[REGION].cloudapp.azure.com you chose.
 3. Verify that the DNS record has been created (nslookup or dig), and then access the application using the DNS name, e.g: 
     - `http://[new-dns-label].[REGION].cloudapp.azure.com`
 

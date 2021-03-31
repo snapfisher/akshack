@@ -20,39 +20,47 @@ Microsoft is also creating a new language to manipulate and deploy ARM templates
 
 ## Part 2:  Connect to the VM with Azure Bastion
 
-Now that you have the resources created, you need to connect to the VM in order to access them.  We will do this with the Azure Bastion Service.  Note that the virtual machine has been configured to allow outgoing requests to the internet, so that we can run this hack in a less difficult way, but to not allow incoming request, which is why we need bastion.  In a production system, you could also limit connections in both directions, as your Vnet could be connected to an Azure VPN or ExpressRoute, making connection from your organization simple.
+Now that you have the resources created, you need to connect to the VM in order to access them.  We will do this with the Azure Bastion Service, so we need to create one.  
 
-To create the Azure Bastion Service, we are going to follow the instructions here: https://docs.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
+Note that the virtual machine has been configured to allow outgoing requests to the internet, so that we can run this hack in a less difficult way, but to not allow incoming request, which is why we need bastion.  In a production system, you could also limit connections in both directions, as your Vnet could be connected to an Azure VPN or ExpressRoute, making connection from your organization simple.
+
+To create the Azure Bastion Service, we are going to follow the instructions here: 
 
 ## Part 3: Connect to AKS and run the application
 
 From the Azure Portal, connect to the virtual machine in Azure using the bastion service.  The user name is 'azureuser'.  Use the private SSH key from a local file, which you will find was created during the ARM template deployment (the passphrase requested is for the private key).
 
-Once you are connected to the machine, we need to do a small bit of maintenance: update the version of the Azure CLI which is on the machine.  This can be done simply by typing "sudo az upgrade".
+Once you are connected to the machine, we need to do a small bit of maintenance: upgate the version of the Azure CLI which is on the machine.  
 
 Then, login to the Azure CLI
 
 Then, let's get the credentials to the new AKS cluster.  Remember that the VM is on the same Vnet as the cluster, so once we are logged in, we can connect to the AKS cluster just as we did from a non-protected instance.
 
-az aks get-credentials --resource-group privateaks --name aksCluster1 (modify the resource group and cluster name to however you built the new cluster)
-
-Then, let's download this repo to that machine: git clone https://github.com/snapfisher/akshack.git akshack
+Then, let's download this repo to that machine from GitHub
 
 In Student/Resources/Challenge 11/ you will find 4 yaml files.  We are going to go all the way back to challenge 4 and deploy the same application.  First you need to modify the deployment files to match your ACR and V1 container version names.  Then deploy using kubectl just as you did in challenge 4.
 
-It will fail.  Use 'Kubectl Describe' to determine why.
+It will fail.  Using kubectl, determine why.
 
-Delete the deployments.  The reason for failure was that if you recall, way back in the early challenges, when we created the AKS instance, we assigned the ACR to the cluster for permissions and authorization.  Since we already have the cluster created, we need to add this functionality.  Information on how to do this can be found here: https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
+Delete the deployments.  The reason for failure was that if you recall, way back in the early challenges, when we created the AKS instance, we assigned the ACR to the cluster for permissions and authorization.  Since we already have the cluster created, we need to add this functionality.  We do not need to recreate the cluster.
 
-Once you have worked out the ACR permissions, create the deployments again.  You should get a public IP address, and since this virtual network does not block specifically created output public IP addresses you should be able to access the running application from the internet.  However, if this was a real internal application, you might not want outside users to be able to access your application.  You want the Web Service to supply a private IP address instead.  Delete the web service, modify the service yaml file, and then redeploy.  Information on the modifications you need to make can be found here: https://docs.microsoft.com/en-us/azure/aks/internal-lb
+Once you have worked out the ACR permissions, create the deployments again.  You should get a public IP address, and since this virtual network does not block specifically created output public IP addresses you should be able to access the running application from the internet.  However, if this was a real internal application, you might not want outside users to be able to access your application.  You want the Web Service to supply a private IP address instead using an internal load balancer.  You'll need to make modifications to the yaml file and redeploy the service.
 
-After a minute or so, you can look at the kubectl output and see that now, instead of a public IP, the web application has an internal IP that should be 10.x.x.x.  However, we did not create any connected desktop machines, so we cannot run the app, however, if you created a windows Virtual Machine on the Vnet, you would be able to access the application via this private IP address.
+After a minute or so, you can look at the kubectl output and see that now, instead of a public IP, the web application has an internal IP that should be 10.x.x.x.  However, we did not create any connected desktop machines, so we cannot run the app.  If you were to create a windows Virtual Machine on the Vnet, and log on, you would be able to access the application via this private IP address.
 
 
 ## Success Criteria
 
 1. You can create a Private AKS deployment
 2. You can connect to the AKS cluster from the virtual machine on the Vnet
-3. You can run the application with either a public or private IP address, using kubectl and standard tools, as you did for public available clusters
+3. You can run the application with both a public or private IP address, using kubectl and standard tools, as you did for public available clusters (for the private IP address, seeing that the container has the appropriate IP address is just a good as running it)
 
 Full credit to Larry Claman: https://github.com/onemtc/privateaks-cicd.  I highly recommend taking a look at this if you want to see an example of how to do CI/CD into your Private AKS Cluster using GitHub.
+
+
+## Reading:
+https://docs.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
+https://docs.microsoft.com/en-us/cli/azure/update-azure-cli
+https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
+https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
+https://docs.microsoft.com/en-us/azure/aks/internal-lb

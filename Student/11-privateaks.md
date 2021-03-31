@@ -60,7 +60,11 @@ Full credit to Larry Claman: https://github.com/onemtc/privateaks-cicd.  I highl
 
 ## Reading:
 https://docs.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
+
 https://docs.microsoft.com/en-us/cli/azure/update-azure-cli
+
 https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
+
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
+
 https://docs.microsoft.com/en-us/azure/aks/internal-lb

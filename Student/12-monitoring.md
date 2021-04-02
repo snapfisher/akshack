@@ -35,7 +35,7 @@ Take a look at the preconfigured recommended alerts and spend some time reading 
 
 ## Part 3: Logs and Events from a Running Application
 
-We're going to take down and redeploy the Fabmedical application.  Leave the mongodb alone, just delete the content-web and content-api services and deployments.  Reinstall these using the identical yaml files that you used for Challenge 11.
+We're going to take down and redeploy the FabMedical application.  Leave the mongodb alone, just delete the content-web and content-api services and deployments.  Reinstall these using the identical yaml files that you used for Challenge 11.
 
 Once the application is running hit it in your browser a couple of times.  You should be able to see the data from mongodb database, but if you cannot, don't worry about it.
 

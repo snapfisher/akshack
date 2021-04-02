@@ -38,6 +38,9 @@ In this hack you will solve a common challenge for companies migrating to the cl
    - Explore integrating DNS with Kubernetes services, and explore different ways of routing traffic to FabMedical by configuring an Ingress Controller.
 - Challenge 11: **[Private AKS Clusters](Student/11-privateaks.md)**
    - Create an AKS cluster deployment which has no public endpoints
+- Challenge 12: **[Monitoring and Container Insights](Student/12-monitoring.md)**
+   - Monitor your cluster using AKS tooling
+   
    
 ## Prerequisites
 

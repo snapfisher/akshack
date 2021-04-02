@@ -19,7 +19,7 @@ The instructor will demo the application running on a Linux virtual machine, non
 
 ### Building the Docker Image
 
-Our Fab Medical App consists of two components, a web component and an api component.  Your task is to build containers for each of these.  You have been provided source code (no need to edit) and a Dockerfile for each (also no need to edit, but you should spend some time to ensure that you understand what is contained within.  Dockerfiles are the standard way of containerizing applications.  We could spend the entire hack just containerizing applications, but we won't)
+Our Fab Medical App consists of two components, a web component and an api component.  Your task is to build containers for each of these.  You have been provided source code for the application (no need to edit), but you need to create the Dockerfiles (one for each).  Dockerfiles are the standard way of containerizing applications. 
 
 ### Success Criteria
 

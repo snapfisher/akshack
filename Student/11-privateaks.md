@@ -1,6 +1,6 @@
 # Challenge 11: Private AKS
 
-[< Previous Challenge](./10-networking.md) - **[Home](../README.md)** 
+[< Previous Challenge](./10-networking.md) - **[Home](../README.md)** - [Next Challenge >](./12-monitoring.md)
 
 ## Introduction
 

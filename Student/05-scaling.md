@@ -29,6 +29,7 @@ In this challenge we will cover scale and resiliency from multiple aspects. We'l
 	- Keep refreshing to see the API app’s host name keep changing between the deployed instances.
 - Scale the API app back down to 1, and immediately keep refreshing the `/stats.html` page.
 	- You will notice that without any downtime it now directs traffic only to the single instance left.
+- AKS supports autoscaling through the cluster autoscaler and the horizontal pod autoscaler.  Update your cluster to use the cluster autoscaler.  Change your deployment to require many more web pods and watch what happens.
 
 ## Success Criteria
 
@@ -36,3 +37,9 @@ In this challenge we will cover scale and resiliency from multiple aspects. We'l
 1. Run 2 replicas of content-web.
 1. Run 4 replicas of content-api.
 1. Fix the resource issues.
+
+## Resource Links
+
+https://docs.microsoft.com/en-us/cli/azure/aks/nodepool?view=azure-cli-latest
+
+https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler

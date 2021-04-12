@@ -49,3 +49,4 @@ helm upgrade  nginx-ingress ingress-nginx/ingress-nginx \
 
 1. The nginx Ingress Controller is installed in your cluster
 1. You've recreated a new Ingress for content-web that allows access through a domain name.
+

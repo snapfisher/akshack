@@ -55,7 +55,8 @@ Look in Settings -> Node Pools and see how you can both scale and upgrade the cl
 1. You understand the monitoring features provided for AKS by the Azure Portal and Container Insights.
 
 
-## Reading:
+## Reading
+
 https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
 
 https://kubernetes.io/docs/reference/kubectl/overview/

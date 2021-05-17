@@ -19,13 +19,13 @@ In this challenge we'll be setting up all the tools we will need to complete our
       - Docker Extension
       - Kubernetes Extension
       - Remote SSH Extension
-    - Optional but recommended: [Lens Kubernetes GUI](https://docs.k8slens.dev/v4.1.4/)
+    - Optional but recommended: [Lens Kubernetes GUI](https://docs.k8slens.dev/v4.1.4/) and/or [K9S](https://k8slens.dev/)
 
 All of the challenges can be completed on a Linux workstation within the Bash Shell.  You can also do most of the challenges from a Windows desktop, however, some of the early challenges which require you to containerize applications using docker must be completed from a Linux workstation, since the containers used for this hack are Linux containers.  If you do not have a Linux workstation (which we assume), you have two choices:
 - Install the Windows Subsystem for Linux, Version 2 in your Windows Laptop, and then use that for at least the Linux portions
 - Use a Linux virtual machine in Azure for the Linux Portions.
 
-### Deploying Lunix and Docker on Windows with WSL2
+### Deploying Linux and Docker on Windows with WSL2
 If you choose to use the first option, instructions on installing WSL2 can be found here: [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 You will also need to install docker in the WSL2 subsystem: [Docker Installation](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers)
 

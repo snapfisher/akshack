@@ -11,7 +11,7 @@ Your coach will demonstrate running the application natively without using conta
 
 ## Description
 
-In this challenge we'll use a Dockerfiles to build container images of our app, and we'll test them locally.
+In this challenge we'll use Dockerfiles to build container images of our app, and we'll test them locally.
 
 ### First a demo.
 
@@ -19,7 +19,7 @@ The instructor will demo the application running on a Linux virtual machine, non
 
 ### Building the Docker Image
 
-Our Fab Medical App consists of two components, a web component and an api component.  Your task is to build containers for each of these.  You have been provided source code for the application (no need to edit), but you need to create the Dockerfiles (one for each).  Dockerfiles are the standard way of containerizing applications. 
+Our Fab Medical App consists of two components, a web component and an api component.  Your task is to build containers for each of these.  You have been provided source code for the application (no need to edit), but you need to create the Dockerfiles (one for each).  Dockerfiles are the standard build definition tool for containerizing applications. 
 
 ### Success Criteria
 

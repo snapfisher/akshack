@@ -4,6 +4,11 @@
 
 ## Notes & Guidance
 
+- If students have not or could not deploy their containers to the Azure Container Registry, we have staged the FabMedical apps on Docker Hub at these locations:
+  - **API app:** whatthehackmsft/content-api
+  - **Web app:** whatthehackmsft/content-web
+
+
 - Students will be provided with two sample template yaml files one for a Service resource and one for a Deployment resource. A good recommendation would be to create two copies of each (one set for content-api and one set for content-web)
 - Students will need to find extra settings to add to their template YAML files. They should make use of the Kubernetes docs in addition to whatever else they can find on the web.
 	- **NOTE:** Fully fleshed out YAML files are available in the Coach Solutions folder for Challenge 4.

@@ -11,8 +11,20 @@ metadata:
   annotations:
     service.beta.kubernetes.io/azure-dns-label-name: myserviceuniquelabel
 ```
+## Notes on 2b:
 
+1. Adding a dns label to the ingress controller via helm can be tricky.  It's documented at this link: https://docs.microsoft.com/en-us/azure/aks/ingress-static-ip
+   - The instructions talk about installing a new ingress controller.  You already have one (from step 2a) so you don't need to do a fresh install.
+   - Ignore the notes about creating and using a static IP.  For this challenge, a dynamic IP is fine.
+   - Specifically, you will need to modify (upgrade) your previously-installed ingress controller deployment as follows:  _Note: This example is formatted for bash.  For powershell, change the line continuation character from \ to `_
+```bash
+helm upgrade  nginx-ingress ingress-nginx/ingress-nginx \
+    --namespace ingress-basic --reuse-values \
+    --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="NEW-DNS-LABEL"
+```
+2. Now that the ingress controller has been updated, you need to update the ingress yaml you created earlier  in part 2a by uncommenting the `Host:` line and adding in the [new-dns-label].[REGION].cloudapp.azure.com you chose.
 
+## Other
 
 - Make sure that each student's AKS cluster has the nginx Ingress Controller installed. They should eventually find this page that is a step by step walkthrough on installing the nginx Ingress Controller on an AKS cluster:
 	- <https://docs.microsoft.com/en-us/azure/aks/ingress-basic>

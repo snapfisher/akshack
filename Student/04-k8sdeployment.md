@@ -10,11 +10,6 @@ Now the rubber meets the road.... we will be deploying the application to our ne
 
 In this challenge we need to get our application up and running in Kubernetes. We will learn about Kubernetes configuration YAML files used to create the various Kubernetes resources that will be needed to run our app. We will give our containers resource limits and open the app up to the outside world so we can test it.
 
-**NOTE:** If you have not or could not deploy your containers to the Azure Container Registry, we have staged the FabMedical apps on Docker Hub at these locations:
-- **API app:** whatthehackmsft/content-api
-- **Web app:** whatthehackmsft/content-web
-
-
 ### Deploy the **API app** from the command line using kubectl and YAML files:
 
 - **NOTE:** Sample YAML files to get you started can be found in the Student Resources folder.
@@ -26,7 +21,9 @@ In this challenge we need to get our application up and running in Kubernetes. W
   - Memory: 128MB
 - Hint:  Make sure you correctly set [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits)
 - We have not exposed the API app to the external world. (Explanation:  see [this link](https://goglides.io/clusterip-nodeport-and-loadbalancer-service-types-in-kubernetes/98/) and the [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)) Therefore, to test it you need to:
-	- Figure out how to get a bash shell on the API app pod just deployed.  _[Hint 1: link to docs](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)_   _Hint 2: VS Code and/or [Lens](https://k8slens.dev/) can make this point-n-click_
+	- Figure out how to get a bash shell on the API app pod just deployed.  
+  	   - _[Hint 1: link to docs](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)_   
+  	   - _Hint 2: VS Code, [Lens](https://k8slens.dev/), or [K9S](https://k9scli.io/) can make this point-n-click_
 	- From the terminal, curl the url of the `/speakers` end point.
 	- You should get a huge json document in response.
   

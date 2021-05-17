@@ -19,7 +19,14 @@
 - Have the teams show you the running cluster with:
 	- `kubectl get nodes`
 		- This show show three nodes, but it will not show the availability zone.  
-    - To see the availability zone, run:  `kubectl get nodes -o custom-columns=NAME:'{.metadata.name}',REGION:'{.metadata.labels.topology\.kubernetes\.io/region}',ZONE:'{metadata.labels.topology\.kubernetes\.io/zone}'`
+    - To see the availability zone, run: 
+	```
+	kubectl describe nodes | grep -e "Name:" -e "failure-domain.beta.kubernetes.io/zone"
+	```
+	or (more fancy!):
+	```
+	kubectl get nodes -o custom-columns=NAME:'{.metadata.name}',REGION:'{.metadata.labels.topology\.kubernetes\.io/region}',ZONE:'{metadata.labels.topology\.kubernetes\.io/zone}'
+	```
 	- Each node should be a VM with at least 2 vCPU and 4 GB of memory.  The reason for this is that we need to have enough CPU and RAM for the system pods to run (e.g. CoreDNS and tunnelfront).  See this link for more details: 
     	- <https://docs.microsoft.com/en-us/azure/aks/use-system-pools>
 	- **NOTE:** They will need to learn how to connect kubectl to their cluster using `az aks get-credentials`

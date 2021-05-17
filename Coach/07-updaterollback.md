@@ -15,7 +15,7 @@
 	- `kubectl set image deployment/content-web content-web=whatthehackmsft/content-web:v2`
 		- where **deployment/content-web** is the name of the deployment used
 	- `kubectl set image` takes the name of the deployment and the new image to update to.
-	- **NOTE:** Use a similar command to perform a rolling update on content-api
+
 - Use `kubectl get pods --watch` to show all the pods getting updated and terminated.
 - Rollbacks are performed with:
 	- `kubectl rollout undo deployment/content-web`
